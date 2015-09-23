@@ -1,0 +1,40 @@
+{
+	"name": "shout-dispatch",
+	"description": "The notification dispatcher for shout.",
+	"license": "MIT",
+	"author": {
+		"name": "Jannis R",
+		"email": "mail@jannisr.de",
+		"url": "http://jannisr.de"
+	},
+	"homepage": "https://github.com/derhuerst/shout-dispatch",
+	"repository": "git://github.com/derhuerst/shout-dispatch.git",
+	"bugs": "https://github.com/derhuerst/shout-dispatch/issues",
+	"version": "0.1.0",
+	"main": "./service.coffee",
+	"preferGlobal": true,
+	"keywords": [
+		"service",
+		"push",
+		"notification",
+		"realtime",
+		"apn",
+		"apns",
+		"gcm",
+		"mpns",
+		"coffeescript",
+		"javascript"
+	],
+	"dependencies": {
+		"coffee-script":		"^1.10.0",
+		"redis":				"^1.0.0",
+		"async":				"^1.4.2",
+		"push-notify":			"^1.1.1"
+	},
+	"directories": {
+		"src":		"./"
+	},
+	"scripts": {
+		"service":	"coffee service.coffee"
+	}
+}
