@@ -1,7 +1,7 @@
 redis =			require 'redis'
 async =			require 'async'
 
-Dispatcher =	require './Dispatcher'
+MessageSender =	require './MessageSender'
 
 
 
@@ -23,7 +23,7 @@ systems =
 
 sub = redis.createClient()
 client = redis.createClient()
-dispatcher = Object.create(Dispatcher).init apnCrt, apnKey, gcmKey
+dispatcher = Object.create(MessageSender).init apnCrt, apnKey, gcmKey
 
 sub.on 'message', (channel, key) ->
 	groupId = key.split(':')[1]
@@ -54,3 +54,4 @@ sub.on 'message', (channel, key) ->
 				dispatcher.mpns tokens.mpns, groupId, message
 
 sub.subscribe 'm'   # `m` is for messages
+console.log 'Message sender running.'
